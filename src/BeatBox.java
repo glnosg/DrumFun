@@ -13,6 +13,7 @@ public class BeatBox {
     Sequence sequence;
     Track track;
     JFrame theFrame;
+    JTextField tempoValueField;
 
     String[] instrumentNames = {"Bass Drum", "Closed Hi-Hat",
         "Open Hi-Hat", "Acoustic Snare", "Crash Cymbal", "Hand Clap",
@@ -51,6 +52,14 @@ public class BeatBox {
         downTempo.addActionListener(new MyDownTempoListener());
         buttonBox.add(downTempo);
 
+        tempoValueField = new JTextField(6);
+        tempoValueField.setText("120");
+        String sliderDescript = "Current tempo: ";
+
+        JPanel sliderPanel = new JPanel();
+        sliderPanel.add(new Label(sliderDescript));
+        sliderPanel.add(tempoValueField);
+
         Box nameBox = new Box(BoxLayout.Y_AXIS);
         for (int i = 0; i < 16; i++) {
             nameBox.add(new Label(instrumentNames[i]));
@@ -58,6 +67,7 @@ public class BeatBox {
 
         background.add(BorderLayout.EAST, buttonBox);
         background.add(BorderLayout.WEST, nameBox);
+        background.add(BorderLayout.SOUTH, sliderPanel);
 
         theFrame.getContentPane().add(background);
 
@@ -143,6 +153,7 @@ public class BeatBox {
         public void actionPerformed(ActionEvent a) {
             float tempoFactor = sequencer.getTempoFactor();
             sequencer.setTempoFactor((float) (tempoFactor * 1.03));
+            tempoValueField.setText(Float.toString(120 * (sequencer.getTempoFactor())));
         }
     }
 
@@ -150,6 +161,7 @@ public class BeatBox {
         public void actionPerformed(ActionEvent a) {
             float tempoFactor = sequencer.getTempoFactor();
             sequencer.setTempoFactor((float) (tempoFactor * .97));
+            tempoValueField.setText(Float.toString(120 * (sequencer.getTempoFactor())));
         }
     }
 
