@@ -21,7 +21,7 @@ public class BeatBox {
     static final int BPM_MIN = 0;
     static final int BPM_MAX = 320;
     static final int BPM_INIT = 120;
-    private int currentTempo;
+    private float currentTempo = 120;
 
     String[] instrumentNames = {"Bass Drum", "Closed Hi-Hat",
         "Open Hi-Hat", "Acoustic Snare", "Crash Cymbal", "Hand Clap",
@@ -60,7 +60,7 @@ public class BeatBox {
         downTempo.addActionListener(new MyDownTempoListener());
         buttonBox.add(downTempo);
 
-        tempoValueField = new JTextField(6);
+        tempoValueField = new JTextField(8);
         tempoValueField.setText("120");
         String sliderDescript = "Current tempo: ";
 
@@ -147,7 +147,7 @@ public class BeatBox {
             sequencer.setSequence(sequence);
             sequencer.setLoopCount(sequencer.LOOP_CONTINUOUSLY);
             sequencer.start();
-            sequencer.setTempoInBPM((float) currentTempo);
+            sequencer.setTempoInBPM(120);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -167,21 +167,22 @@ public class BeatBox {
 
     public class MyUpTempoListener implements ActionListener {
         public void actionPerformed(ActionEvent a) {
-            if (currentTempo < BPM_MAX)
-                currentTempo++;
-            sequencer.setTempoInBPM((float) currentTempo);
-            beatsPerMinute.setValue(currentTempo);
-            tempoValueField.setText(Integer.toString(currentTempo));
+            float tempoFactor = sequencer.getTempoFactor();
+            if (tempoFactor < 2.67f)
+                sequencer.setTempoFactor((float) (tempoFactor * 1.03));
+            beatsPerMinute.setValue((int) (sequencer.getTempoFactor() * 120));
+            tempoValueField.setText(Float.toString(tempoFactor * 120));
+
         }
     }
 
     public class MyDownTempoListener implements ActionListener {
         public void actionPerformed(ActionEvent a) {
-            if (currentTempo > BPM_MIN)
-                currentTempo--;
-            sequencer.setTempoInBPM((float) currentTempo);
-            beatsPerMinute.setValue(currentTempo);
-            tempoValueField.setText(Integer.toString(currentTempo));
+            float tempoFactor = sequencer.getTempoFactor();
+            if (tempoFactor > 0)
+                sequencer.setTempoFactor((float) (tempoFactor * 0.97));
+            beatsPerMinute.setValue((int) (sequencer.getTempoFactor() * 120));
+            tempoValueField.setText(Float.toString(tempoFactor * 120));
         }
     }
 
@@ -189,8 +190,9 @@ public class BeatBox {
         public void stateChanged(ChangeEvent e) {
             JSlider source = (JSlider)e.getSource();
             currentTempo = (int)source.getValue();
-            sequencer.setTempoInBPM((float) currentTempo);
-            tempoValueField.setText(Integer.toString(currentTempo));
+            float tempoFactor = ((float) (currentTempo / 120));
+            sequencer.setTempoFactor(tempoFactor);
+            tempoValueField.setText(Float.toString(tempoFactor * 120));
         }
     }
 
