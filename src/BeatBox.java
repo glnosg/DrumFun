@@ -44,19 +44,19 @@ public class BeatBox {
         checkBoxList = new ArrayList<JCheckBox>();
         Box buttonBox = new Box(BoxLayout.Y_AXIS);
 
-        JButton start = new JButton("Start");
+        JButton start = new JButton("       Start       ");
         start.addActionListener(new MyStartListener());
         buttonBox.add(start);
 
-        JButton stop = new JButton("Stop");
+        JButton stop = new JButton("       Stop        ");
         stop.addActionListener(new MyStopListener());
         buttonBox.add(stop);
 
-        JButton upTempo = new JButton("Tempo Up");
+        JButton upTempo = new JButton("Tempo x 1.03");
         upTempo.addActionListener(new MyUpTempoListener());
         buttonBox.add(upTempo);
 
-        JButton downTempo = new JButton("Tempo Down");
+        JButton downTempo = new JButton("Tempo x 0.97");
         downTempo.addActionListener(new MyDownTempoListener());
         buttonBox.add(downTempo);
 
@@ -168,10 +168,10 @@ public class BeatBox {
     public class MyUpTempoListener implements ActionListener {
         public void actionPerformed(ActionEvent a) {
             float tempoFactor = sequencer.getTempoFactor();
-            if (tempoFactor < 2.67f)
+            if (tempoFactor < 2.66f)
                 sequencer.setTempoFactor((float) (tempoFactor * 1.03));
             beatsPerMinute.setValue((int) (sequencer.getTempoFactor() * 120));
-            tempoValueField.setText(Float.toString(tempoFactor * 120));
+            tempoValueField.setText(Integer.toString((int)(sequencer.getTempoFactor() * 120)));
 
         }
     }
@@ -182,7 +182,7 @@ public class BeatBox {
             if (tempoFactor > 0)
                 sequencer.setTempoFactor((float) (tempoFactor * 0.97));
             beatsPerMinute.setValue((int) (sequencer.getTempoFactor() * 120));
-            tempoValueField.setText(Float.toString(tempoFactor * 120));
+            tempoValueField.setText(Integer.toString((int)(sequencer.getTempoFactor() * 120)));
         }
     }
 
@@ -192,7 +192,7 @@ public class BeatBox {
             currentTempo = (int)source.getValue();
             float tempoFactor = ((float) (currentTempo / 120));
             sequencer.setTempoFactor(tempoFactor);
-            tempoValueField.setText(Float.toString(tempoFactor * 120));
+            tempoValueField.setText(Integer.toString((int)(sequencer.getTempoFactor() * 120)));
         }
     }
 
