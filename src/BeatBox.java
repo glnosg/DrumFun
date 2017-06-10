@@ -17,6 +17,8 @@ public class BeatBox {
     JFrame theFrame;
     JTextField tempoValueField;
     JSlider beatsPerMinute;
+    ArrayList<HearTheSoundButton> hearTheSoundButtonList;
+    JPanel hearTheSoundButtonPanel;
 
     static final int BPM_MIN = 0;
     static final int BPM_MAX = 320;
@@ -42,6 +44,7 @@ public class BeatBox {
         background.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         checkBoxList = new ArrayList<JCheckBox>();
+        hearTheSoundButtonList = new ArrayList<HearTheSoundButton>();
         Box buttonBox = new Box(BoxLayout.Y_AXIS);
 
         JButton start = new JButton("       Start       ");
@@ -76,13 +79,18 @@ public class BeatBox {
         beatsPerMinute.setPaintTicks(true);
         sliderPanel.add(beatsPerMinute);
 
-        Box nameBox = new Box(BoxLayout.Y_AXIS);
+        GridLayout hearTheSoundButtonGrid = new GridLayout(16, 1);
+        hearTheSoundButtonGrid.setVgap(1);
+        hearTheSoundButtonPanel = new JPanel(hearTheSoundButtonGrid);
+
         for (int i = 0; i < 16; i++) {
-            nameBox.add(new Label(instrumentNames[i]));
+            hearTheSoundButtonList.add(new HearTheSoundButton(instruments[i], instrumentNames[i]));
+            hearTheSoundButtonList.get(i).createTheButton();
+            hearTheSoundButtonPanel.add(hearTheSoundButtonList.get(i).button);
         }
 
         background.add(BorderLayout.EAST, buttonBox);
-        background.add(BorderLayout.WEST, nameBox);
+        background.add(BorderLayout.WEST, hearTheSoundButtonPanel);
         background.add(BorderLayout.SOUTH, sliderPanel);
 
         theFrame.getContentPane().add(background);
