@@ -214,8 +214,11 @@ public class BeatBox {
                 }
             }
 
+            JFileChooser fileSave = new JFileChooser();
+            fileSave.showSaveDialog(theFrame);
+
             try {
-                FileOutputStream fileStream = new FileOutputStream(new File("CheckBoxState.ser"));
+                FileOutputStream fileStream = new FileOutputStream(fileSave.getSelectedFile());
                 ObjectOutputStream os = new ObjectOutputStream(fileStream);
                 os.writeObject(checkBoxState);
             } catch (Exception ex) {
@@ -228,8 +231,11 @@ public class BeatBox {
         public void actionPerformed(ActionEvent a) {
             boolean[] checkBoxState = null;
 
+            JFileChooser fileOpen = new JFileChooser();
+            fileOpen.showOpenDialog(theFrame);
+
             try {
-                FileInputStream fileIn = new FileInputStream(new File("CheckBoxState.ser"));
+                FileInputStream fileIn = new FileInputStream(fileOpen.getSelectedFile());
                 ObjectInputStream is= new ObjectInputStream(fileIn);
                 checkBoxState = (boolean[]) is.readObject();
             } catch (Exception ex) {
@@ -246,7 +252,7 @@ public class BeatBox {
             }
 
             sequencer.stop();
-            buildTrackAndStart();
+            //buildTrackAndStart();
         }
     }
 
