@@ -46,31 +46,32 @@ public class BeatBox {
 
         checkBoxList = new ArrayList<JCheckBox>();
         hearTheSoundButtonList = new ArrayList<HearTheSoundButton>();
-        Box buttonBox = new Box(BoxLayout.Y_AXIS);
+        GridLayout functButtonGrid = new GridLayout(6, 1);
+        JPanel functButtonPanel = new JPanel(functButtonGrid);
 
         JButton start = new JButton("       Start       ");
         start.addActionListener(new MyStartListener());
-        buttonBox.add(start);
+        functButtonPanel.add(start);
 
         JButton stop = new JButton("       Stop        ");
         stop.addActionListener(new MyStopListener());
-        buttonBox.add(stop);
+        functButtonPanel.add(stop);
 
         JButton upTempo = new JButton("Tempo x 1.03");
         upTempo.addActionListener(new MyUpTempoListener());
-        buttonBox.add(upTempo);
+        functButtonPanel.add(upTempo);
 
         JButton downTempo = new JButton("Tempo x 0.97");
         downTempo.addActionListener(new MyDownTempoListener());
-        buttonBox.add(downTempo);
+        functButtonPanel.add(downTempo);
 
         JButton savePattern = new JButton("Save Pattern");
         savePattern.addActionListener(new MySavePatternListener());
-        buttonBox.add(savePattern);
+        functButtonPanel.add(savePattern);
 
         JButton loadPattern = new JButton("Load Pattern");
         loadPattern.addActionListener(new MyLoadPatternListener());
-        buttonBox.add(loadPattern);
+        functButtonPanel.add(loadPattern);
 
         tempoValueField = new JTextField(8);
         tempoValueField.setText("120");
@@ -98,7 +99,7 @@ public class BeatBox {
             hearTheSoundButtonPanel.add(hearTheSoundButtonList.get(i).button);
         }
 
-        background.add(BorderLayout.EAST, buttonBox);
+        background.add(BorderLayout.EAST, functButtonPanel);
         background.add(BorderLayout.WEST, hearTheSoundButtonPanel);
         background.add(BorderLayout.SOUTH, sliderPanel);
 
