@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ade6c01-bbf1-458a-beef-130292f7379d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BeatBox.java" afterPath="$PROJECT_DIR$/src/BeatBox.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,10 +18,26 @@
       <file leaf-file-name="BeatBox.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BeatBox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="100" column="0" lean-forward="true" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+            <state relative-caret-position="482">
+              <caret line="409" column="5" lean-forward="true" selection-start-line="409" selection-start-column="5" selection-end-line="409" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#943#951#0" expanded="true" />
+                <element signature="e#1663#1664#0" expanded="true" />
+                <element signature="e#1700#1701#0" expanded="true" />
+                <element signature="method#setUpMidi#0;class#BeatBox#0" expanded="false" />
+                <element signature="method#buildTrackAndStart#0;class#BeatBox#0" expanded="false" />
+                <element signature="method#makeTracks#0;class#BeatBox#0" expanded="false" />
+                <element signature="method#makeEvent#0;class#BeatBox#0" expanded="false" />
+                <element signature="class#MyStartListener#0;class#BeatBox#0" expanded="false" />
+                <element signature="e#8724#8725#0" expanded="true" />
+                <element signature="e#8768#8769#0" expanded="true" />
+                <element signature="class#MyStopListener#0;class#BeatBox#0" expanded="false" />
+                <element signature="class#MyUpTempoListener#0;class#BeatBox#0" expanded="false" />
+                <element signature="class#MyDownTempoListener#0;class#BeatBox#0" expanded="false" />
+                <element signature="class#MySavePatternListener#0;class#BeatBox#0" expanded="false" />
+                <element signature="class#MyLoadPatternListener#0;class#BeatBox#0" expanded="false" />
+                <element signature="class#MySendPatternListener#0;class#BeatBox#0" expanded="false" />
+                <element signature="class#MySliderListener#0;class#BeatBox#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -47,6 +62,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>actionPer</find>
+      <find>patterns</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -58,15 +79,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/BeatBoxServer.java" />
         <option value="$PROJECT_DIR$/src/BeatBox.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="1301" />
-    <option name="height" value="772" />
+    <option name="x" value="70" />
+    <option name="y" value="44" />
+    <option name="width" value="1288" />
+    <option name="height" value="700" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -374,7 +396,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="70" y="44" width="1288" height="700" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -386,13 +408,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3258595" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36515912" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17448117" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17624223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -441,7 +463,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -454,7 +478,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#943#951#0" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+            <element signature="method#setUpMidi#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#buildTrackAndStart#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeTracks#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeEvent#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyStartListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="e#8724#8725#0" expanded="true" />
+            <element signature="e#8768#8769#0" expanded="true" />
+            <element signature="class#MyStopListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyUpTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyDownTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySavePatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyLoadPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySendPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySliderListener#0;class#BeatBox#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -472,7 +512,23 @@
         <state relative-caret-position="5040">
           <caret line="252" column="61" lean-forward="true" selection-start-line="252" selection-start-column="61" selection-end-line="252" selection-end-column="61" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#943#951#0" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+            <element signature="method#setUpMidi#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#buildTrackAndStart#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeTracks#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeEvent#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyStartListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="e#8724#8725#0" expanded="true" />
+            <element signature="e#8768#8769#0" expanded="true" />
+            <element signature="class#MyStopListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyUpTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyDownTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySavePatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyLoadPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySendPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySliderListener#0;class#BeatBox#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -490,7 +546,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#943#951#0" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+            <element signature="method#setUpMidi#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#buildTrackAndStart#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeTracks#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeEvent#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyStartListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="e#8724#8725#0" expanded="true" />
+            <element signature="e#8768#8769#0" expanded="true" />
+            <element signature="class#MyStopListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyUpTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyDownTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySavePatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyLoadPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySendPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySliderListener#0;class#BeatBox#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -508,7 +580,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#943#951#0" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+            <element signature="method#setUpMidi#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#buildTrackAndStart#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeTracks#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeEvent#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyStartListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="e#8724#8725#0" expanded="true" />
+            <element signature="e#8768#8769#0" expanded="true" />
+            <element signature="class#MyStopListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyUpTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyDownTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySavePatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyLoadPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySendPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySliderListener#0;class#BeatBox#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -526,7 +614,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#943#951#0" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+            <element signature="method#setUpMidi#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#buildTrackAndStart#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeTracks#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeEvent#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyStartListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="e#8724#8725#0" expanded="true" />
+            <element signature="e#8768#8769#0" expanded="true" />
+            <element signature="class#MyStopListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyUpTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyDownTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySavePatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyLoadPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySendPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySliderListener#0;class#BeatBox#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -536,7 +640,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#943#951#0" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+            <element signature="method#setUpMidi#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#buildTrackAndStart#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeTracks#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeEvent#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyStartListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="e#8724#8725#0" expanded="true" />
+            <element signature="e#8768#8769#0" expanded="true" />
+            <element signature="class#MyStopListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyUpTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyDownTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySavePatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyLoadPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySendPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySliderListener#0;class#BeatBox#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -546,7 +666,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#943#951#0" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+            <element signature="method#setUpMidi#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#buildTrackAndStart#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeTracks#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeEvent#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyStartListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="e#8724#8725#0" expanded="true" />
+            <element signature="e#8768#8769#0" expanded="true" />
+            <element signature="class#MyStopListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyUpTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyDownTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySavePatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyLoadPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySendPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySliderListener#0;class#BeatBox#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -556,7 +692,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#943#951#0" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+            <element signature="method#setUpMidi#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#buildTrackAndStart#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeTracks#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeEvent#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyStartListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="e#8724#8725#0" expanded="true" />
+            <element signature="e#8768#8769#0" expanded="true" />
+            <element signature="class#MyStopListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyUpTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyDownTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySavePatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyLoadPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySendPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySliderListener#0;class#BeatBox#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -566,7 +718,23 @@
         <state relative-caret-position="175">
           <caret line="58" column="42" lean-forward="true" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#943#951#0" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+            <element signature="method#setUpMidi#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#buildTrackAndStart#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeTracks#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeEvent#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyStartListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="e#8724#8725#0" expanded="true" />
+            <element signature="e#8768#8769#0" expanded="true" />
+            <element signature="class#MyStopListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyUpTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyDownTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySavePatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyLoadPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySendPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySliderListener#0;class#BeatBox#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -576,7 +744,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#943#951#0" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+            <element signature="method#setUpMidi#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#buildTrackAndStart#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeTracks#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeEvent#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyStartListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="e#8724#8725#0" expanded="true" />
+            <element signature="e#8768#8769#0" expanded="true" />
+            <element signature="class#MyStopListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyUpTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyDownTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySavePatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyLoadPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySendPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySliderListener#0;class#BeatBox#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -586,7 +770,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#943#951#0" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+            <element signature="method#setUpMidi#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#buildTrackAndStart#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeTracks#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeEvent#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyStartListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="e#8724#8725#0" expanded="true" />
+            <element signature="e#8768#8769#0" expanded="true" />
+            <element signature="class#MyStopListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyUpTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyDownTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySavePatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyLoadPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySendPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySliderListener#0;class#BeatBox#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -596,7 +796,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#943#951#0" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+            <element signature="method#setUpMidi#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#buildTrackAndStart#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeTracks#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeEvent#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyStartListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="e#8724#8725#0" expanded="true" />
+            <element signature="e#8768#8769#0" expanded="true" />
+            <element signature="class#MyStopListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyUpTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyDownTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySavePatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyLoadPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySendPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySliderListener#0;class#BeatBox#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -606,7 +822,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#943#951#0" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+            <element signature="method#setUpMidi#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#buildTrackAndStart#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeTracks#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeEvent#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyStartListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="e#8724#8725#0" expanded="true" />
+            <element signature="e#8768#8769#0" expanded="true" />
+            <element signature="class#MyStopListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyUpTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyDownTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySavePatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyLoadPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySendPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySliderListener#0;class#BeatBox#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -619,12 +851,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/awt/event/ActionListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BeatBoxServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/Thread.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="241" column="0" lean-forward="false" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/BeatBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="100" column="0" lean-forward="true" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+        <state relative-caret-position="482">
+          <caret line="409" column="5" lean-forward="true" selection-start-line="409" selection-start-column="5" selection-end-line="409" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#943#951#0" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+            <element signature="method#setUpMidi#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#buildTrackAndStart#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeTracks#0;class#BeatBox#0" expanded="false" />
+            <element signature="method#makeEvent#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyStartListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="e#8724#8725#0" expanded="true" />
+            <element signature="e#8768#8769#0" expanded="true" />
+            <element signature="class#MyStopListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyUpTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyDownTempoListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySavePatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MyLoadPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySendPatternListener#0;class#BeatBox#0" expanded="false" />
+            <element signature="class#MySliderListener#0;class#BeatBox#0" expanded="false" />
           </folding>
         </state>
       </provider>

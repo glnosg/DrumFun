@@ -2,24 +2,42 @@ import javax.sound.midi.*;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+import java.net.Socket;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Vector;
 
 public class BeatBox {
 
+    private String userName;
+
     JPanel mainPanel;
-    ArrayList<JCheckBox> checkBoxList;
-    Sequencer sequencer;
-    Sequence sequence;
-    Track track;
     JFrame theFrame;
     JTextField tempoValueField;
     JSlider beatsPerMinute;
-    ArrayList<HearTheSoundButton> hearTheSoundButtonList;
     JPanel hearTheSoundButtonPanel;
+    JList incomeList;
+
+    Sequencer sequencer;
+    Sequence sequence;
+    Track track;
+
+    ArrayList<JCheckBox> checkBoxList;
+    ArrayList<HearTheSoundButton> hearTheSoundButtonList;
+    Vector<String> listVector = new Vector<String>();
+    HashMap<String, boolean[]> patternsFromServer = new HashMap<String, boolean[]>();
+
+    ObjectInputStream in;
+    ObjectOutputStream out;
 
     static final int BPM_MIN = 0;
     static final int BPM_MAX = 320;
@@ -34,7 +52,30 @@ public class BeatBox {
     int[] instruments = {35, 42, 46, 38, 49, 39, 50, 60, 70, 72, 64, 56, 58, 47, 67, 63};
 
     public static void main(String[] args) {
-        new BeatBox().buildGUI();
+        new BeatBox().setUp();
+    }
+
+    public void setUp() {
+        buildGUI();
+        String randomUsers[] = {"Pawel", "Kasia", "Wojtek", "Krzys", "Karolina", "Ola"};
+        userName = randomUsers[(int) (Math.random() * 6)];
+
+        try {
+            Socket socket = new Socket("127.0.0.1", 47017);
+
+            in = new ObjectInputStream(socket.getInputStream());
+            out = new ObjectOutputStream(socket.getOutputStream());
+
+            Thread listener = new Thread(new ServerListener());
+            listener.start();
+
+            System.out.println("Connection established");
+
+        } catch (Exception ex) {
+            String[] e = {"No Connection"};
+            incomeList.setListData(e);
+            ex.printStackTrace();
+        }
     }
 
     public void buildGUI() {
@@ -46,14 +87,14 @@ public class BeatBox {
 
         checkBoxList = new ArrayList<JCheckBox>();
         hearTheSoundButtonList = new ArrayList<HearTheSoundButton>();
-        GridLayout functButtonGrid = new GridLayout(6, 1);
+        GridLayout functButtonGrid = new GridLayout(7, 1);
         JPanel functButtonPanel = new JPanel(functButtonGrid);
 
-        JButton start = new JButton("       Start       ");
+        JButton start = new JButton("Start");
         start.addActionListener(new MyStartListener());
         functButtonPanel.add(start);
 
-        JButton stop = new JButton("       Stop        ");
+        JButton stop = new JButton("Stop");
         stop.addActionListener(new MyStopListener());
         functButtonPanel.add(stop);
 
@@ -73,12 +114,28 @@ public class BeatBox {
         loadPattern.addActionListener(new MyLoadPatternListener());
         functButtonPanel.add(loadPattern);
 
+        JButton sendPattern = new JButton("Send Pattern");
+        sendPattern.addActionListener(new MySendPatternListener());
+        functButtonPanel.add(sendPattern);
+
+        incomeList = new JList();
+        incomeList.addListSelectionListener(new MyListSelectionListener());
+        incomeList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        JScrollPane theList = new JScrollPane(incomeList);
+        theList.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        theList.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+        incomeList.setListData(listVector);
+
+        JPanel functionPanel = new JPanel(new GridLayout(2, 1));
+        functionPanel.add(functButtonPanel);
+        functionPanel.add(theList);
+
         tempoValueField = new JTextField(8);
         tempoValueField.setText("120");
-        String sliderDescript = "Current tempo: ";
+        String sliderDescription = "Current tempo: ";
 
         JPanel sliderPanel = new JPanel();
-        sliderPanel.add(new Label(sliderDescript));
+        sliderPanel.add(new Label(sliderDescription));
         sliderPanel.add(tempoValueField);
 
         beatsPerMinute = new JSlider(JSlider.HORIZONTAL,
@@ -99,7 +156,7 @@ public class BeatBox {
             hearTheSoundButtonPanel.add(hearTheSoundButtonList.get(i).button);
         }
 
-        background.add(BorderLayout.EAST, functButtonPanel);
+        background.add(BorderLayout.EAST, functionPanel);
         background.add(BorderLayout.WEST, hearTheSoundButtonPanel);
         background.add(BorderLayout.SOUTH, sliderPanel);
 
@@ -169,6 +226,30 @@ public class BeatBox {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+
+    public void makeTracks(int[] list) {
+
+        for (int i = 0; i < 16; i++) {
+            int key = list[i];
+
+            if (key != 0) {
+                track.add(makeEvent(144, 9, key, 100, i));
+                track.add(makeEvent(128, 9, key, 100, i + 1));
+            }
+        }
+    }
+
+    public MidiEvent makeEvent(int comd, int chan, int one, int two, int tick) {
+        MidiEvent event = null;
+        try {
+            ShortMessage a = new ShortMessage();
+            a.setMessage(comd, chan, one, two);
+            event = new MidiEvent(a, tick);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return event;
     }
 
     public class MyStartListener implements ActionListener {
@@ -257,6 +338,30 @@ public class BeatBox {
         }
     }
 
+    public class MySendPatternListener implements ActionListener {
+        public void actionPerformed(ActionEvent ev) {
+            boolean[] checkBoxState = new boolean[256];
+
+            for (int i = 0; i < 256; i++) {
+                JCheckBox check = (JCheckBox) checkBoxList.get(i);
+
+                if (check.isSelected()) {
+                    checkBoxState[i] = true;
+                }
+            }
+            try {
+                DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                Date date = new Date();
+
+                out.writeObject(userName + "[" + dateFormat.format(date) + "]: New Pattern");
+                out.writeObject(checkBoxState);
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
     public class MySliderListener implements ChangeListener {
         public void stateChanged(ChangeEvent e) {
             JSlider source = (JSlider)e.getSource();
@@ -267,29 +372,43 @@ public class BeatBox {
         }
     }
 
-    public void makeTracks(int[] list) {
+    public class MyListSelectionListener implements ListSelectionListener {
+        public void valueChanged(ListSelectionEvent ev) {
 
-        for (int i = 0; i < 16; i++) {
-            int key = list[i];
+            String selected = (String) incomeList.getSelectedValue();
+            boolean[] checkBoxState = (boolean[]) patternsFromServer.get(selected);
 
-            if (key != 0) {
-                track.add(makeEvent(144, 9, key, 100, i));
-                track.add(makeEvent(128, 9, key, 100, i + 1));
+            for (int i = 0; i < 256; i++) {
+                JCheckBox check = (JCheckBox) checkBoxList.get(i);
+                if(checkBoxState[i]) {
+                    check.setSelected(true);
+                } else {
+                    check.setSelected(false);
+                }
+            }
+
+            sequencer.stop();
+            //buildTrackAndStart();
+        }
+    }
+
+    public class ServerListener implements Runnable {
+        Object obj;
+        public void run() {
+            try {
+                while((obj = in.readObject()) != null) {
+                    String keyName = (String) obj;
+                    boolean[] checkBoxState = (boolean[]) in.readObject();
+                    patternsFromServer.put(keyName, checkBoxState);
+                    listVector.add(keyName);
+                    incomeList.setListData(listVector);
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
         }
     }
 
-    public MidiEvent makeEvent(int comd, int chan, int one, int two, int tick) {
-        MidiEvent event = null;
-        try {
-            ShortMessage a = new ShortMessage();
-            a.setMessage(comd, chan, one, two);
-            event = new MidiEvent(a, tick);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return event;
-    }
 }
 
 
